@@ -7,6 +7,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+
+/* services */
+import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -23,9 +28,10 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    DynamicDialogModule
   ],
-  providers: [],
+  providers: [MessageService, DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
