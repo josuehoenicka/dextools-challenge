@@ -1,5 +1,40 @@
 .login-form {
+  display: flex;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to bottom, var(--blue-light), var(--blue-dark));
+}
+
+.login-form__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form__logo {
+  width: 12em;
+  margin-bottom: 2em;
+}
+
+.login-form__field-container {
+  position: relative;
+}
+
+.login-form__field-icon {
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+}
+
+.login-form__field-input {
+  width: 20vw;
+  height: 3em;
+  border: 1em solid #7f2e2e00;
+  border-radius: .5em;
+  padding-left: 2em;
+  font-size: 1.3em;
+  outline: none;
 }
