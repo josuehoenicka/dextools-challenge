@@ -9,3 +9,12 @@
   --white-light: #d0d1d1;
   --white-light: #7d7e8a ;
 }
+
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
