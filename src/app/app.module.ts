@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'primeng/toast';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
