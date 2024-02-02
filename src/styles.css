@@ -3,6 +3,8 @@
 @import "../node_modules/primeflex/primeflex.css";
 @import "../node_modules/primeicons/primeicons.css";
 
+/* Root */
+
 :root {
   --blue-light:  #4d438d ;
   --blue-dark:  #2f295e;
@@ -11,6 +13,8 @@
   --white-light: #d0d1d1;
   --white-dark: #7d7e8a ;
 }
+
+/* General */
 
 * {
   font-family: 'Raleway', sans-serif;
@@ -22,4 +26,16 @@
   text-decoration: none;
   outline: none;
   border: none;
+}
+
+/* Toast messages */
+
+p-toast .p-toast-message {
+  font-size: 1.2em;
+  padding: 1em .5em;
+}
+
+p-toast .p-toast-message-icon {
+  font-size: 3em;
+  padding: 0 .4em;
 }

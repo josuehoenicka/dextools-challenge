@@ -1,4 +1,6 @@
-<form class="login-form">
+<p-toast key="toast"></p-toast>
+
+<form class="login-form" [formGroup]="loginForm">
   <div class="login-form__header">
     <img class="login-form__logo" [src]="watermark" alt="churrasco watermark" />
     <div
@@ -7,6 +9,8 @@
       <i class="pi pi-user login-form__field-icon"></i>
       <input
         pInputText
+        formControlName="username"
+        type="text"
         placeholder="Username"
         class="login-form__field-input login-form__field-input-first"
       />
@@ -16,16 +20,17 @@
       <input
         pInputText
         type="password"
+        formControlName="password"
         placeholder="Password"
         class="login-form__field-input login-form__field-input-secondary"
       />
     </div>
     <div class="p-col-12 login-form__btn-container">
       <div class="login-form__btn-checkbox">
-        <input type="checkbox" class="login-form__btn-checkbox-input" />
-        <span class="login-form__btn-checkbox-span">remember</span>
+        <input type="checkbox" class="login-form__btn-checkbox-input"/>
+        <span class="login-form__btn-checkbox-span" >remember</span>
       </div>
-      <button type="button" class="login-form__btn-login">Log in</button>
+      <button type="button" class="login-form__btn-login" (click)="onLogin()">Log in</button>
     </div>
   </div>
   <div class="login-form_footer">

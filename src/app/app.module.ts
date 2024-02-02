@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
@@ -25,8 +24,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastModule,
     DynamicDialogModule

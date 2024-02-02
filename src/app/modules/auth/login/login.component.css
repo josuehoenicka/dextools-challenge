@@ -75,6 +75,7 @@
   border-radius: .5em;
   background-color: var(--blue-light);
   color: var(--white-light);
+  cursor: pointer;
 }
 
 .login-form__btn-checkbox {
