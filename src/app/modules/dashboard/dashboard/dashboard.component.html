@@ -1,4 +1,5 @@
-<p-toast key="toast"></p-toast>
+<body>
+  <p-toast key="toast"></p-toast>
 
 <nav>
   <img
@@ -24,7 +25,7 @@
 
   <!-- WATCH -->
   <div
-  [style]="{ 'background-color': 'var(--white-light)', 'width': '97  %', 'height': '100%', 'margin': '0 1em'}"
+  [style]="{ 'background-color': 'var(--white-dark)', 'width': '97  %', 'height': '75vh', 'margin': '0 1em', 'border-radius': '.5em'}"
     *ngIf="this.currentTAB == this.localTABs.WATCH"
   >
     WATCH
@@ -32,9 +33,12 @@
 
   <!-- UPLOAD -->
   <div
-    [style]="{ 'background-color': 'var(--white-light)', 'width': '97  %', 'height': '100%', 'margin': '0 1em'}"
+    [style]="{ 'background-color': 'var(--white-dark)', 'width': '97  %', 'height': '75vh', 'margin': '0 1em', 'border-radius': '.5em'}"
     *ngIf="this.currentTAB == this.localTABs.UPLOAD"
   >
     UPLOAD
   </div>
 </form>
+</body>
+
+
