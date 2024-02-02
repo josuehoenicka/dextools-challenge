@@ -38,3 +38,21 @@ nav {
   color: var(--white-light);
   cursor: pointer;
 }
+
+/* TABs */
+
+.p-tabmenu-nav {
+  margin: 2em 1em 0 1em;
+}
+
+.p-tabmenu-nav .p-menuitem-text {
+  background-color: var(--blue-dark);
+  padding: .8em 1em;
+  margin: 0 .05em;
+  border-radius: 1em 1em 0 0;
+  font-size: 1.3em;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  color: var(--white-light);
+}

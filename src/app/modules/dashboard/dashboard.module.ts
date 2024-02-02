@@ -4,9 +4,9 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { TableModule } from 'primeng/table';
-import { InputTextModule } from 'primeng/inputtext';
-import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -17,8 +17,9 @@ import { ToastModule } from 'primeng/toast';
     DashboardRoutingModule,
     FileUploadModule,
     TableModule,
-    InputTextModule,
-    ToastModule
+    ToastModule,
+    ToolbarModule,
+    TabMenuModule
   ]
 })
 export class DashboardModule { }

@@ -28,6 +28,10 @@
   border: none;
 }
 
+body {
+  width: 100vw;
+}
+
 /* Toast messages */
 
 p-toast .p-toast-message {
