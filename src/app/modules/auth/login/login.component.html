@@ -1,13 +1,12 @@
 <form class="login-form">
   <div class="login-form__header">
     <img class="login-form__logo" [src]="watermark" alt="churrasco watermark" />
-    <div class="p-col-12 login-form__field-container">
+    <div class="p-col-12 login-form__field-container login-form__field-container-first">
       <i class="pi pi-user login-form__field-icon"></i>
       <input
         pInputText
-        type="password"
         placeholder="Username"
-        class="login-form__field-input"
+        class="login-form__field-input login-form__field-input-first"
       />
     </div>
     <div class="p-col-12 login-form__field-container">
@@ -16,7 +15,7 @@
         pInputText
         type="password"
         placeholder="Password"
-        class="login-form__field-input"
+        class="login-form__field-input login-form__field-input-secondary"
       />
     </div>
   </div>

@@ -20,6 +20,11 @@
 
 .login-form__field-container {
   position: relative;
+
+}
+
+.login-form__field-container-first {
+  border-bottom: .1em solid var(--white-light);
 }
 
 .login-form__field-icon {
@@ -32,9 +37,16 @@
 .login-form__field-input {
   width: 20vw;
   height: 3em;
-  border: 1em solid #7f2e2e00;
-  border-radius: .5em;
-  padding-left: 2em;
+  border: 1em solid var(--white-dark);
+  padding-left: 2.2em;
   font-size: 1.3em;
   outline: none;
+}
+
+.login-form__field-input-first {
+  border-radius: .5em .5em 0 0;
+}
+
+.login-form__field-input-secondary {
+  border-radius: 0 0 .5em .5em;
 }
