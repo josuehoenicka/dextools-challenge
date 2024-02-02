@@ -1,10 +1,16 @@
+/* General */
+
 .login-form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to bottom, var(--blue-light), var(--blue-dark));
 }
+
+/* Header */
 
 .login-form__header {
   display: flex;
@@ -18,13 +24,15 @@
   margin-bottom: 2em;
 }
 
+/* Field container */
+
 .login-form__field-container {
   position: relative;
 
 }
 
 .login-form__field-container-first {
-  border-bottom: .1em solid var(--white-light);
+  border-bottom: .15em solid var(--white-light);
 }
 
 .login-form__field-icon {
@@ -37,10 +45,8 @@
 .login-form__field-input {
   width: 20vw;
   height: 3em;
-  border: 1em solid var(--white-dark);
   padding-left: 2.2em;
   font-size: 1.3em;
-  outline: none;
 }
 
 .login-form__field-input-first {
@@ -49,4 +55,39 @@
 
 .login-form__field-input-secondary {
   border-radius: 0 0 .5em .5em;
+}
+
+
+/* Btn container*/
+
+.login-form__btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 1em;
+}
+
+.login-form__btn-login {
+  padding: .7em 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: .5em;
+  background-color: var(--blue-light);
+  color: var(--white-light);
+}
+
+.login-form__btn-checkbox {
+  padding-left: 1em;
+}
+
+.login-form__btn-checkbox-span {
+  padding-left: .7em;
+  color: var(--white-light);
+}
+
+/* Footer */
+
+.login-form_footer-text {
+  color: var(--white-dark);
 }
