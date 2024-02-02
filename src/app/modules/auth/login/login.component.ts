@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
   @ViewChild('inputPassword') inputPassword: any;
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     let username = this.loginForm.controls['username'].value;
     let password = this.loginForm.controls['password'].value;
-    let token = 3 /* Task: Change for EP's response*/
+    let token = ''; /* Task: Change for EP's response*/
 
     // this.authService.login(username, password).subscribe(
     //   (res) => {
@@ -49,13 +49,22 @@ export class LoginComponent implements OnInit {
     //   (error) => {
     //     console.error(error);
     //     if (error.status === 400) {
-    //       this.showMSG(toast.error,"ERROR",'El usuario o contraseña son incorrectos');
+    //       this.showMSG(toast.error,"ERROR",'The username or password is incorrect');
     //     } else {
-    //       this.showMSG(toast.error,"ERROR",'Error en la autenticación. Por favor, inténtelo de nuevo');
+    //       this.showMSG(toast.error,"ERROR",'Authentication failed. Please try again');
     //     }
     //   }
     // );
-    this.router.navigate([`home/dashboard`]);
+    console.error(username, password, token);
+    if (username !== '') {
+      this.showMSG(toast.success, 'Log In', `Welcome back ${username} !`);
+      /* Note: Wait 2,5 seconds to redirect */
+      setTimeout(() => {
+        this.router.navigate(['home/dashboard']);
+      }, 2500);
+    } else {
+      this.showMSG(toast.error, 'Error', 'Invalid username or password');
+    }
   }
 
   showMSG(
