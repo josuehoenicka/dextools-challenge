@@ -1,7 +1,13 @@
+body {
+  background-color: var(--white-dark);
+}
+
+
 /* TABs */
 
 .p-tabmenu-nav {
-  margin: 2em 1em 0 1em;
+  margin: 2em 3em 0 3em;
+  background-color: var(--white-dark);
 }
 
 .p-tabmenu-nav .p-menuitem-text {
@@ -10,6 +16,10 @@
   margin: 0 .05em;
   border-radius: 1em 1em 0 0;
   font-size: 1.3em;
+}
+
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  background-color: var(--white-dark);
 }
 
 .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {

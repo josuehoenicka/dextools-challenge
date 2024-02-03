@@ -1,1 +1,105 @@
-<p>watch-products works!</p>
+<div>
+  <p-table
+  class="custom-table"
+    dataKey="prdProductoId"
+    #prodTable
+    [style]="{
+      margin: '0 3em 0 2em',
+    }"
+    [value]="arr_products"
+    [rowsPerPageOptions]="[1000]"
+    [rows]="prodRows"
+    [paginator]="paginatorMore1000"
+    paginatorPosition="top"
+    [totalRecords]="totalRecordsProd"
+    [loading]="loading"
+    [scrollable]="true"
+    [resizableColumns]="true"
+    columnResizeMode="expand"
+    [responsive]="true"
+    [scrollHeight]="'75vh'"
+    styleClass="p-datatable-gridlines p-datatable-sm"
+    [customSort]="true"
+  >
+    <ng-template pTemplate="colgroup">
+      <colgroup>
+        <col id="col-1" style="width: auto" />
+        <col id="col-2" style="width: auto" />
+        <col id="col-3" style="width: auto" />
+        <col id="col-4" style="width: auto" />
+        <col id="col-5" style="width: auto" />
+        <col id="col-6" style="width: auto" />
+      </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pResizableColumn>
+          {{ columnsNamesProd[0]["columna"] }}
+        </th>
+        <th pResizableColumn>
+          {{ columnsNamesProd[1]["columna"] }}
+        </th>
+        <th pResizableColumn>
+          {{ columnsNamesProd[2]["columna"] }}
+        </th>
+        <th pResizableColumn>
+          {{ columnsNamesProd[3]["columna"] }}
+        </th>
+        <th pResizableColumn>
+          {{ columnsNamesProd[4]["columna"] }}
+        </th>
+        <th
+          pResizableColumn
+        >
+          {{ columnsNamesProd[5]["columna"] }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template
+      let-expanded="expanded"
+      pTemplate="body"
+      let-prod
+      let-rowIndex="rowIndex"
+    >
+      <tr
+        style="cursor: pointer"
+      >
+
+        <!-- Código -->
+        <td pEditableColumn>
+          {{ prod?.codigo }}
+        </td>
+
+        <!-- Descripción -->
+        <td pEditableColumn>
+          {{ prod?.descripcion }}
+        </td>
+
+        <!-- Precio  -->
+        <td pEditableColumn>
+          {{ prod?.precio }}
+        </td>
+
+        <!-- Subtotal -->
+        <td pEditableColumn>
+          {{ prod?.subtotal }}
+        </td>
+
+        <!-- IVA -->
+        <td pEditableColumn>
+          {{ prod?.iva }}
+        </td>
+
+        <!-- TOTAL -->
+        <td pEditableColumn>
+          {{ prod?.total }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="6"><h4 class="p-text-center">Sin Resultados</h4></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

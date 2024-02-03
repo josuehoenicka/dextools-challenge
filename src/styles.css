@@ -11,7 +11,7 @@
   --red-light:  #b92e4a;
   --red-dark: #733057;
   --white-light: #d0d1d1;
-  --white-dark: #ababab;
+  --white-dark: #eae3e3;
 }
 
 /* General */
@@ -31,6 +31,8 @@
 body {
   width: 100vw;
 }
+
+
 
 /* Toast messages */
 
