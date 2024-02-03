@@ -42,15 +42,6 @@ export class DashboardComponent {
     this.onInitViewTab(false);
   }
 
-  onLogout(): void {
-    this.showMSG(toast.info, 'Logged out', 'Come back soon! 😢');
-
-    /* Note: Wait 2,5 seconds to redirect */
-    setTimeout(() => {
-      this.router.navigate(['/']);
-    }, 2500);
-  }
-
   onInitViewTab(boolean?: boolean) {
     this.items = [
       {

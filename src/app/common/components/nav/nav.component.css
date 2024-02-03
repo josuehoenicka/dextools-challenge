@@ -1,0 +1,41 @@
+/* Nav */
+nav {
+  padding: 1em 2em;
+  width: 100vw;
+  height: 100%;
+  background-color: var(--blue-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Image */
+
+.nav-img {
+  width: 4em;
+}
+
+/* Buttons */
+
+.nav__btn-container {
+  display: flex;
+}
+
+.nav__btn-more {
+  margin-right: 2em;
+  background-color: var(--blue-light);
+}
+
+.nav__btn-logout {
+  background-color: var(--red-light);
+}
+
+.nav__btn-more, .nav__btn-logout {
+  padding: .7em 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: .5em;
+  color: var(--white-light);
+  cursor: pointer;
+}
+

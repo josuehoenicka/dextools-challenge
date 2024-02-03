@@ -7,10 +7,16 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TabMenuModule } from 'primeng/tabmenu';
+import { WatchProductsComponent } from './products/watch-products/watch-products.component';
+import { UploadProductsComponent } from './products/upload-products/upload-products.component';
+import { NavComponent } from 'src/app/common/components/nav/nav.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    WatchProductsComponent,
+    UploadProductsComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,

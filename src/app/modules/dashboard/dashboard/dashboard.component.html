@@ -1,44 +1,37 @@
 <body>
   <p-toast key="toast"></p-toast>
 
-<nav>
-  <img
-    src="../../../../assets/img/favicon.png"
-    alt="churrasco icon"
-    class="nav-img"
-  />
-  <div class="nav__btn-container">
-    <a
-      href="https://www.linkedin.com/in/josuehoenicka/"
-      target="_blank"
-      class="nav__btn-more"
-      >More</a
+  <app-nav></app-nav>
+
+  <form>
+    <p-tabMenu [model]="items" [activeItem]="items[0]"> </p-tabMenu>
+
+    <!-- WATCH -->
+    <div
+      [style]="{
+        'background-color': 'var(--white-dark)',
+        width: '97  %',
+        height: '75vh',
+        margin: '0 1em',
+        'border-radius': '.5em'
+      }"
+      *ngIf="this.currentTAB == this.localTABs.WATCH"
     >
-    <button type="button" class="nav__btn-logout" (click)="onLogout()">
-      Log out
-    </button>
-  </div>
-</nav>
+      WATCH
+    </div>
 
-<form>
-  <p-tabMenu [model]="items" [activeItem]="items[0]"> </p-tabMenu>
-
-  <!-- WATCH -->
-  <div
-  [style]="{ 'background-color': 'var(--white-dark)', 'width': '97  %', 'height': '75vh', 'margin': '0 1em', 'border-radius': '.5em'}"
-    *ngIf="this.currentTAB == this.localTABs.WATCH"
-  >
-    WATCH
-  </div>
-
-  <!-- UPLOAD -->
-  <div
-    [style]="{ 'background-color': 'var(--white-dark)', 'width': '97  %', 'height': '75vh', 'margin': '0 1em', 'border-radius': '.5em'}"
-    *ngIf="this.currentTAB == this.localTABs.UPLOAD"
-  >
-    UPLOAD
-  </div>
-</form>
+    <!-- UPLOAD -->
+    <div
+      [style]="{
+        'background-color': 'var(--white-dark)',
+        width: '97  %',
+        height: '75vh',
+        margin: '0 1em',
+        'border-radius': '.5em'
+      }"
+      *ngIf="this.currentTAB == this.localTABs.UPLOAD"
+    >
+      UPLOAD
+    </div>
+  </form>
 </body>
-
-
