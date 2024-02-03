@@ -10,6 +10,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { WatchProductsComponent } from './products/watch-products/watch-products.component';
 import { UploadProductsComponent } from './products/upload-products/upload-products.component';
 import { NavComponent } from 'src/app/common/components/nav/nav.component';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavComponent } from 'src/app/common/components/nav/nav.component';
     TableModule,
     ToastModule,
     ToolbarModule,
-    TabMenuModule
+    TabMenuModule,
+    FieldsetModule
   ]
 })
 export class DashboardModule { }
