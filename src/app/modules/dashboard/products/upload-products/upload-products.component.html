@@ -25,8 +25,18 @@
   <div class="form-container__fields">
     <div class="form-container__fields-left"></div>
     <div class="form-container__fields-right">
-      <img *ngIf="!fileUploaded" class="form-container__fields-right-cart" src="../../../../../assets/icons/cart1.jpg" alt="">
-      <img *ngIf="fileUploaded" class="form-container__fields-right-cart" src="../../../../../assets/icons/cart2.jpg" alt="">
+      <img
+        *ngIf="!fileUploaded"
+        class="form-container__fields-right-cart"
+        src="../../../../../assets/icons/cart1.jpg"
+        alt=""
+      />
+      <img
+        *ngIf="fileUploaded"
+        class="form-container__fields-right-cart"
+        src="../../../../../assets/icons/cart2.jpg"
+        alt=""
+      />
       <p-fileUpload
         name="file"
         (onSelect)="onSelectFileUploadChild($event)"
@@ -35,6 +45,7 @@
         chooseLabel="Upload Product"
         uploadLabel="Upload"
         cancelLabel="Cancel"
+        (onRemove)="onRemoveFile()"
       ></p-fileUpload>
     </div>
   </div>
