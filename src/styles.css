@@ -32,16 +32,14 @@ body {
   width: 100vw;
 }
 
-
-
 /* Toast messages */
 
 p-toast .p-toast-message {
-  font-size: 1.25em;
+  font-size: 1em;
   padding: 1.25em 2em;
 }
 
 p-toast .p-toast-message-icon {
-  font-size: 1.25em;
+  font-size: 1em;
   padding: 0 .5em;
 }

@@ -1,0 +1,46 @@
+
+
+.form-container {
+  width: 93vw;
+  height: 75vh;
+  margin-left: 2em;
+  background-color: white;
+}
+
+.form-title {
+  width: 100%;
+  display: flex;
+  background-color: var(--blue-dark);
+  justify-content: center;
+  color: var(--white-dark);
+}
+
+
+/* Toolbar */
+
+p-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Buttons (Toolbar right) */
+
+.p-button-warning {
+  color: var(--blue-dark);
+}
+
+.p-button-info {
+  color: var(--white-dark);
+}
+
+.p-button-warning > .pi, .p-button-info > .pi {
+  padding-right: .7em;
+}
+
+.p-button-warning, .p-button-info {
+  padding: .8em;
+  margin: 1em;
+}
+
+

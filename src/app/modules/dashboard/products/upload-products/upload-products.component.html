@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h2 class="form-title">Form</h2>
+  <p-toolbar>
+    <div class="toolbar-container__right">
+      <button
+      (click)="onCancelChild()"
+        type="button"
+        pButton
+        label="Cancel"
+        icon="pi pi-undo"
+        class="p-button-warning"
+        style="margin-left: 0.25em"
+      ></button>
+      <button
+      (click)="onSave($event)"
+        type="button"
+        pButton
+        label="Save"
+        icon="pi pi-save"
+        class="p-button-info"
+        style="margin-left: 0.25em"
+      ></button>
+    </div>
+  </p-toolbar>
+</div>

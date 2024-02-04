@@ -62,6 +62,11 @@ export class DashboardComponent {
     this.currentTAB = TABs.WATCH;
   }
 
+  onCancelParent(cancelEvent: boolean) {
+    this.showMSG(toast.success, 'Ok', 'The product was canceled');
+    if (cancelEvent === true) this.onInitViewTab();
+  }
+
   showMSG(
     severityShow: 'success' | 'info' | 'warn' | 'error' | 'custom',
     title: string,

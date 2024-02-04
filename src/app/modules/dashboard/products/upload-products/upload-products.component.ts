@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-upload-products',
@@ -7,5 +7,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class UploadProductsComponent {
+  @Output() onCancelEvent: EventEmitter<true> = new EventEmitter<true>();
 
+  onCancelChild() {
+    this.onCancelEvent.emit(true);
+  }
+
+  onSave(e?: any) {
+
+  }
 }
