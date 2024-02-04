@@ -14,12 +14,12 @@ export class WatchProductsComponent {
   loading: boolean = false;
 
   columnsNamesProd: any[] = [
-    { columna: 'Código' },
-    { columna: 'Descripción' },
-    { columna: 'Precio' },
-    { columna: 'Subtotal' },
-    { columna: 'IVA' },
-    { columna: 'TOTAL' },
+    { columna: 'Code' },
+    { columna: 'Description' },
+    { columna: 'Price' },
+    { columna: 'More' },
+    { columna: 'More 2' },
+    { columna: 'More 3' },
   ];
 
   ngOnInit(): void {
@@ -30,12 +30,12 @@ export class WatchProductsComponent {
     // console.error(res);
     for (var _i = 0; _i < 100; _i++) {
       var arr_loadedProducts: iProductos = {
-        codigo: 'test',
-        descripcion: 'Test',
-        precio: 0.0,
-        subtotal: 0.0,
-        iva: 0.0,
-        total: 0.0,
+        code: 'test',
+        description: 'Test',
+        price: 0.0,
+        more1: 0.0,
+        more2: 0.0,
+        more3: 0.0,
       };
       this.arr_products.push(arr_loadedProducts);
     }
