@@ -31,6 +31,8 @@ export class UploadProductsComponent {
     console.error(event);
     if (this.fileUploaded) {
       this.showMSG(toast.warn, 'Warn', 'The product was changed');
+    } else {
+      this.showMSG(toast.success, 'Ok', 'The product was added');
     }
     this.fileUploaded = true;
   }
