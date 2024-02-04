@@ -8,6 +8,9 @@ import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/cor
 })
 export class UploadProductsComponent {
   @Output() onCancelEvent: EventEmitter<true> = new EventEmitter<true>();
+  @Output() onFileUploadedEvent: EventEmitter<File> = new EventEmitter<File>();
+
+  fileUploaded: boolean = false;
 
   onCancelChild() {
     this.onCancelEvent.emit(true);
@@ -15,5 +18,16 @@ export class UploadProductsComponent {
 
   onSave(e?: any) {
 
+  }
+
+  onSelectFileUploadChild(event: any) {
+    console.error(event);
+    this.fileUploaded = true;
+  }
+
+  onUploadFileUploadChild(event: any) {
+    console.error(event);
+    const file: File = event.files[0];
+    this.onFileUploadedEvent.emit(file);
   }
 }

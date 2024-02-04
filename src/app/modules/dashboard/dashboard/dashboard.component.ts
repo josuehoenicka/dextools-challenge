@@ -67,6 +67,10 @@ export class DashboardComponent {
     if (cancelEvent === true) this.onInitViewTab();
   }
 
+  onFileUploadedParent(file: File) {
+    console.log('File:', file);
+  }
+
   showMSG(
     severityShow: 'success' | 'info' | 'warn' | 'error' | 'custom',
     title: string,

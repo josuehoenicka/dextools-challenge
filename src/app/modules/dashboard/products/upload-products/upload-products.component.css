@@ -1,10 +1,44 @@
 
-
 .form-container {
   width: 93vw;
   height: 75vh;
   margin-left: 2em;
   background-color: white;
+}
+
+.form-container__fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.form-container__fields-right {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form-container__fields-right-cart {
+  padding-bottom: 3.5em;
+  width: 10em;
+}
+
+
+.p-fileupload .p-button .p-button-label {
+  padding: 1em;
+  background-color: #3B82F6;
+  border-radius: 1em;
+}
+
+.p-button .p-button-icon-left {
+  margin-right: .5em;
+}
+
+.p-fileupload .p-button .p-button-icon-left {
+  display: none;
 }
 
 .form-title {
@@ -27,6 +61,7 @@ p-toolbar {
 /* Buttons (Toolbar right) */
 
 .p-button-warning {
+  color: var(--white-dark);
   color: var(--blue-dark);
 }
 
@@ -34,9 +69,6 @@ p-toolbar {
   color: var(--white-dark);
 }
 
-.p-button-warning > .pi, .p-button-info > .pi {
-  padding-right: .7em;
-}
 
 .p-button-warning, .p-button-info {
   padding: .8em;

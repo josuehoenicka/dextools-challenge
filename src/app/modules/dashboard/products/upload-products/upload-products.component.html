@@ -1,9 +1,9 @@
-<div class="form-container">
-  <h2 class="form-title">Form</h2>
+<form class="form-container">
+  <h2 class="form-title">‎</h2>
   <p-toolbar>
     <div class="toolbar-container__right">
       <button
-      (click)="onCancelChild()"
+        (click)="onCancelChild()"
         type="button"
         pButton
         label="Cancel"
@@ -12,7 +12,7 @@
         style="margin-left: 0.25em"
       ></button>
       <button
-      (click)="onSave($event)"
+        (click)="onSave($event)"
         type="button"
         pButton
         label="Save"
@@ -22,4 +22,20 @@
       ></button>
     </div>
   </p-toolbar>
-</div>
+  <div class="form-container__fields">
+    <div class="form-container__fields-left"></div>
+    <div class="form-container__fields-right">
+      <img *ngIf="!fileUploaded" class="form-container__fields-right-cart" src="../../../../../assets/icons/cart1.jpg" alt="">
+      <img *ngIf="fileUploaded" class="form-container__fields-right-cart" src="../../../../../assets/icons/cart2.jpg" alt="">
+      <p-fileUpload
+        name="file"
+        (onSelect)="onSelectFileUploadChild($event)"
+        (onUpload)="onUploadFileUploadChild($event)"
+        [auto]="true"
+        chooseLabel="Upload Product"
+        uploadLabel="Upload"
+        cancelLabel="Cancel"
+      ></p-fileUpload>
+    </div>
+  </div>
+</form>
