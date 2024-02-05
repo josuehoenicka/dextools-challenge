@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocalstorageService {
-
   private readonly tokenFromLogin = 'loginResponse';
-
-  constructor() { }
 
   getLoginResponseFromLocalStorage(): any {
     const response = localStorage.getItem(this.tokenFromLogin);
@@ -21,5 +18,4 @@ export class LocalstorageService {
   clearLocalStorage(): void {
     localStorage.removeItem(this.tokenFromLogin);
   }
-
 }

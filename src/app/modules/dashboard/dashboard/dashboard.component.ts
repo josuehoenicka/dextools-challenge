@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { toast } from 'src/app/common/enums/toast';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 enum TABs {
   WATCH,
@@ -26,7 +27,8 @@ export class DashboardComponent {
     private route: ActivatedRoute,
     private messageService: MessageService,
     private router: Router,
-    private localStorage: LocalstorageService
+    private localStorage: LocalstorageService,
+    private productsService: ProductsService
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +38,8 @@ export class DashboardComponent {
     this.isloading = true;
 
     this.tokenFromLogin = this.localStorage.getLoginResponseFromLocalStorage();
+
+    this.getProducts(this.tokenFromLogin);
 
     console.error(this.tokenFromLogin);
 
@@ -62,6 +66,12 @@ export class DashboardComponent {
       },
     ];
     this.currentTAB = TABs.WATCH;
+  }
+
+  getProducts(token: string) {
+    this.productsService.getProducts(token).subscribe((res) => {
+      console.error(res);
+    });
   }
 
   onCancelParent(cancelEvent: boolean) {
