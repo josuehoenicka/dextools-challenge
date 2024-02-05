@@ -6,7 +6,12 @@
   background-color: white;
 }
 
+.toolbar-container__right {
+  padding: 0 2em;
+}
+
 .form-container__fields {
+  padding: 0 13em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
