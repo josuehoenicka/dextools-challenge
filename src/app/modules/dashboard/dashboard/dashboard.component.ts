@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { toast } from 'src/app/common/enums/toast';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 enum TABs {
   WATCH,
@@ -19,11 +20,13 @@ export class DashboardComponent {
   public localTABs = TABs;
   items!: MenuItem[];
   isloading: boolean = false;
+  tokenFromLogin: any;
 
   constructor(
     private route: ActivatedRoute,
     private messageService: MessageService,
-    private router: Router
+    private router: Router,
+    private localStorage: LocalstorageService
   ) {}
 
   ngOnInit(): void {
@@ -32,10 +35,9 @@ export class DashboardComponent {
     /* Note: Show skeleton */
     this.isloading = true;
 
-    this.route.params.subscribe((params) => {
-      const token = params['token'];
-      console.log('Token:', token);
-    });
+    this.tokenFromLogin = this.localStorage.getLoginResponseFromLocalStorage();
+
+    console.error(this.tokenFromLogin);
 
     /* Note: Component loaded. Stop showing skeleton and activate TABs */
     this.isloading = false;

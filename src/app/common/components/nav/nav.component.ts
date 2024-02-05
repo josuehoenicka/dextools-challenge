@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { toast } from '../../enums/toast';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,10 +10,16 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private messageService: MessageService, private router: Router) {}
+  constructor(
+    private messageService: MessageService,
+    private router: Router,
+    private localStorage: LocalstorageService
+  ) {}
 
   onLogout(): void {
     this.showMSG(toast.info, 'Logged out', 'Come back soon! 😢');
+
+    this.localStorage.getLoginResponseFromLocalStorage();
 
     /* Note: Wait 2,5 seconds to redirect */
     setTimeout(() => {
