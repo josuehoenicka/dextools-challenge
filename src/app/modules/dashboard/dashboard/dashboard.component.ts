@@ -1,3 +1,4 @@
+import { Token } from '@angular/compiler';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
@@ -39,9 +40,13 @@ export class DashboardComponent {
 
     this.tokenFromLogin = this.localStorage.getLoginResponseFromLocalStorage();
 
-    this.getProducts(this.tokenFromLogin);
+    console.error(this.tokenFromLogin)
 
-    console.error(this.tokenFromLogin);
+    if (this.tokenFromLogin) {
+      this.getProducts(this.tokenFromLogin);
+    } else {
+      this.showMSG(toast.error, 'ERROR', 'Token not found in localStorage');
+    }
 
     /* Note: Component loaded. Stop showing skeleton and activate TABs */
     this.isloading = false;
