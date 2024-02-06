@@ -8,7 +8,7 @@ import { Token } from '@angular/compiler';
 })
 export class ProductsService {
   private productsSubject: Subject<any[]> = new Subject<any[]>();
-  private apiUrl = 'http://vps.churrasco.digital:3005/products';
+  private apiUrl = 'http://vps.churrasco.digital:3005';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,15 @@ export class ProductsService {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token.token}`,
     });
-    return this.http.get<any>(this.apiUrl, { headers: headers });
+    return this.http.get<any>(`${this.apiUrl}/products`, { headers: headers });
+  }
+
+  addData(token: any, productData: any): Observable<any> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token.token}`,
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(`${this.apiUrl}/addproduct`, productData, { headers: headers });
   }
 
   setProducts(products: any[]) {
