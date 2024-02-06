@@ -1,5 +1,5 @@
 import { Token } from '@angular/compiler';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { toast } from 'src/app/common/enums/toast';
@@ -23,11 +23,10 @@ export class DashboardComponent {
   items!: MenuItem[];
   isloading: boolean = false;
   tokenFromLogin: any;
+  products = [];
 
   constructor(
-    private route: ActivatedRoute,
     private messageService: MessageService,
-    private router: Router,
     private localStorage: LocalstorageService,
     private productsService: ProductsService
   ) {}
@@ -74,10 +73,12 @@ export class DashboardComponent {
   }
 
   getProducts(token: string) {
-    this.productsService.getProducts(token).subscribe((res) => {
-      console.error(res);
+    this.productsService.getData(token).subscribe((res) => {
+      this.productsService.setProducts(res);
+      this.products = [];
     });
   }
+
 
   onCancelParent(cancelEvent: boolean) {
     this.showMSG(toast.success, 'Ok', 'The product was canceled');

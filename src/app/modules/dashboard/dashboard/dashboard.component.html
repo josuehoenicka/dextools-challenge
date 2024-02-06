@@ -31,7 +31,10 @@
       }"
       *ngIf="this.currentTAB == this.localTABs.UPLOAD"
     >
-      <app-upload-products (onCancelEvent)="onCancelParent($event)" (onFileUploadedEvent)="onFileUploadedParent($event)"></app-upload-products>
+      <app-upload-products
+        (onCancelEvent)="onCancelParent($event)"
+        (onFileUploadedEvent)="onFileUploadedParent($event)"
+      ></app-upload-products>
     </div>
   </form>
 </body>
