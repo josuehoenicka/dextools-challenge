@@ -18,7 +18,7 @@ export class NavComponent {
 
   onLogout(): void {
     this.showMSG(toast.info, 'Logged out', 'Come back soon! 😢');
-    this.localStorage.getLoginResponseFromLocalStorage();
+    this.localStorage.clearLocalStorage();
 
     /* Note: Wait 2,5 seconds to redirect */
     setTimeout(() => {
