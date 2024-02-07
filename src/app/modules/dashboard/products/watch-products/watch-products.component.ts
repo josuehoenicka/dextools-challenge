@@ -31,7 +31,7 @@ export class WatchProductsComponent {
     await this.onLoadProducts();
   }
 
-  async onLoadProducts() {
+  onLoadProducts() {
     // console.error(res);
     this.productsService.getProducts().subscribe((res) => {
       this.products = res;
