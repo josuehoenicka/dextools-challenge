@@ -1,7 +1,7 @@
 
 .form-container {
   width: 93vw;
-  height: 75vh;
+  height: 70vh;
   margin-left: 2em;
   background-color: white;
 }
@@ -14,21 +14,22 @@
   padding: 0 13em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .form-container__fields-right {
-  margin-top: 2em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .form-container__fields-right-cart {
-  padding-bottom: 3.5em;
-  width: 10em;
+  padding-bottom: 1em;
+  width: 8em;
 }
 
 

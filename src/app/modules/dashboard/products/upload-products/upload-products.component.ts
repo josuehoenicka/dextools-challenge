@@ -30,6 +30,8 @@ export class UploadProductsComponent {
   productForm!: FormGroup;
   fileUploaded: boolean = false;
   tokenFromLogin: any;
+  filesLength: number = 0;
+  arr_filesUploaded: any[] = [];
 
   ngOnInit(): void {
     this.createForm();
@@ -55,38 +57,50 @@ export class UploadProductsComponent {
 
   onSave() {
     if (this.productForm.valid) {
-      this.productsService.addData(this.tokenFromLogin, this.productForm.value).subscribe(
-        (res) => {
-          console.error(res);
-        },
-        (error) => {
-          console.error(error);
-        }
-      );
+      this.productsService
+        .addData(this.tokenFromLogin, this.productForm.value)
+        .subscribe(
+          (res) => {
+            console.error(res);
+          },
+          (error) => {
+            console.error(error);
+          }
+        );
     } else {
-      this.showMSG(toast.warn, 'Warning', 'Please fill out all required fields.');
+      this.showMSG(
+        toast.error,
+        'Error',
+        'Please fill out all required fields and upload at least one product'
+      );
     }
   }
 
   onSelectFileUploadChild(event: any) {
-    console.error(event);
-    if (this.fileUploaded) {
-      this.showMSG(toast.warn, 'Warn', 'The product was changed');
-    } else {
+    if (event.files.length > 0) {
+      this.arr_filesUploaded.push(...event.files);
+      this.fileUploaded = true;
       this.showMSG(toast.success, 'Ok', 'The product was added');
     }
-    this.fileUploaded = true;
+    console.error(this.arr_filesUploaded);
+  }
+
+  onRemoveFile(file: any) {
+    console.error(file);
+    const index = this.arr_filesUploaded.indexOf(file.file);
+    if (index !== -1) {
+      this.arr_filesUploaded.splice(index, 1);
+    }
+    if (this.arr_filesUploaded.length === 0) {
+      this.fileUploaded = false;
+    }
+    this.showMSG(toast.success, 'Ok', 'The product was removed');
+    console.error(this.arr_filesUploaded);
   }
 
   onUploadFileUploadChild(event: any) {
-    console.error(event);
-    const file: File = event.files[0];
+    const file: File = event.files;
     this.onFileUploadedEvent.emit(file);
-  }
-
-  onRemoveFile() {
-    this.showMSG(toast.success, 'Ok', 'The product was removed');
-    this.fileUploaded = false;
   }
 
   showMSG(
