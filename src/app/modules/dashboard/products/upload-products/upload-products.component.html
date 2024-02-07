@@ -1,4 +1,4 @@
-<form class="form-container">
+<form class="form-container" [formGroup]="productForm" (ngSubmit)="onSave()">
   <h2 class="form-title">‎</h2>
   <p-toolbar>
     <div class="toolbar-container__right">
@@ -12,7 +12,7 @@
         style="margin-left: 0.25em"
       ></button>
       <button
-        (click)="onSave($event)"
+        (click)="onSave()"
         type="button"
         pButton
         label="Save"
@@ -23,7 +23,64 @@
     </div>
   </p-toolbar>
   <div class="form-container__fields">
-    <div class="form-container__fields-left"></div>
+    <div class="form-container__fields-left">
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="SKU"
+          id="SKU"
+          placeholder="SKU"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="code"
+          id="code"
+          placeholder="Code"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="pictures"
+          id="pictures"
+          placeholder="Pictures"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="name"
+          id="name"
+          placeholder="Name"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="description"
+          id="description"
+          placeholder="Description"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="price"
+          id="price"
+          placeholder="Price"
+        />
+      </div>
+      <div class="field-container">
+        <input
+          pInputText
+          formControlName="currency"
+          id="currency"
+          placeholder="Currency"
+        />
+      </div>
+    </div>
     <div class="form-container__fields-right">
       <img
         *ngIf="!fileUploaded"

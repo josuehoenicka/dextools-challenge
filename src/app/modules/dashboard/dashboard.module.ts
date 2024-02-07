@@ -11,6 +11,8 @@ import { WatchProductsComponent } from './products/watch-products/watch-products
 import { UploadProductsComponent } from './products/upload-products/upload-products.component';
 import { NavComponent } from 'src/app/common/components/nav/nav.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { FieldsetModule } from 'primeng/fieldset';
     ToastModule,
     ToolbarModule,
     TabMenuModule,
-    FieldsetModule
+    FieldsetModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextModule
   ]
 })
 export class DashboardModule { }
