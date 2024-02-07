@@ -13,12 +13,13 @@
 .form-container__fields {
   padding: 0 13em;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 60% 40%;
   max-height: 50vh;
   overflow-y: auto;
 }
 
 .form-container__fields-right {
+  margin-left: 4em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -79,6 +80,16 @@ p-toolbar {
 .p-button-warning, .p-button-info {
   padding: .8em;
   margin: 1em;
+}
+
+/* Inputtexts */
+
+.p-inputtext {
+  padding: .45em 1em;
+  margin: .7em 0;
+  border: .1em solid var(--blue-dark);
+  border-radius: 1em;
+  width: 100%;
 }
 
 

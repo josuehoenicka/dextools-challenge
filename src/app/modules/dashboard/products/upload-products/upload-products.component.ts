@@ -56,6 +56,8 @@ export class UploadProductsComponent {
   }
 
   onSave() {
+    this.productForm.controls["pictures"].patchValue(this.arr_filesUploaded);
+    console.error(this.productForm)
     if (this.productForm.valid) {
       this.productsService
         .addData(this.tokenFromLogin, this.productForm.value)
