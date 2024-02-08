@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class LocalstorageService {
   private readonly tokenFromLogin = 'loginResponse';
+  private readonly urlsKey = 'uploadedFileUrls';
 
   getLoginResponseFromLocalStorage(): any {
     const response = localStorage.getItem(this.tokenFromLogin);
@@ -17,5 +18,14 @@ export class LocalstorageService {
 
   clearLocalStorage(): void {
     localStorage.removeItem(this.tokenFromLogin);
+  }
+
+  saveUrlsToLocalStorage(urls: string[]): void {
+    localStorage.setItem(this.urlsKey, JSON.stringify(urls));
+  }
+
+  getUrlsFromLocalStorage(): string[] {
+    const urlsString = localStorage.getItem(this.urlsKey);
+    return urlsString ? JSON.parse(urlsString) : [];
   }
 }

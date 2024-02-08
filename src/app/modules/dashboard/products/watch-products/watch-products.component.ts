@@ -53,7 +53,7 @@ export class WatchProductsComponent {
           name: res[_i]['name'],
           pictures: res[_i]['pictures'],
         };
-        this.arr_products.push(arr_loadedProducts);
+        this.arr_products.unshift(arr_loadedProducts);
       }
     });
 

@@ -19,7 +19,8 @@ import { ProductsService } from 'src/app/services/products.service';
 export class UploadProductsComponent {
   @Output() onCancelEvent: EventEmitter<true> = new EventEmitter<true>();
   @Output() onFileUploadedEvent: EventEmitter<File> = new EventEmitter<File>();
-  @Output() onSaveSuccessfull: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() onSaveSuccessfull: EventEmitter<boolean> =
+    new EventEmitter<boolean>();
 
   constructor(
     private messageService: MessageService,
@@ -57,26 +58,37 @@ export class UploadProductsComponent {
   }
 
   onSave() {
-    this.productForm.controls["pictures"].patchValue(this.arr_filesUploaded);
-    console.error(this.productForm)
+    this.productForm.controls['pictures'].patchValue(this.arr_filesUploaded);
+    console.log('URLs de los archivos subidos:');
+    this.arr_filesUploaded.forEach((file: any) => {
+      console.log(file.objectURL);
+    });
+    console.error(this.productForm);
     if (this.productForm.valid && this.fileUploaded) {
-        this.productsService
-          .addData(this.tokenFromLogin, this.productForm.value)
-          .subscribe(
-            (res) => {
-            this.showMSG(
-              toast.success,
-              'Ok',
-              'Product uploaded successfully'
+      this.productsService
+        .addData(this.tokenFromLogin, this.productForm.value)
+        .subscribe(
+          (res) => {
+            this.showMSG(toast.success, 'Ok', 'Product uploaded successfully');
+
+            /* Note: Save URLS images on localStorage */
+            let urls: string[] = [];
+            this.arr_filesUploaded.forEach((file: any) => {
+              urls.push(file.objectURL.changingThisBreaksApplicationSecurity);
+            });
+            this.localStorage.saveUrlsToLocalStorage(urls);
+
+            /* Note: Get URLS images on localStorage on dev console */
+            console.error(
+              'The URLS of the images are saved in the localStorage. These are the uploaded URLS:' +
+                this.localStorage.getUrlsFromLocalStorage()
             );
+
+            /* Note: Emit save successfull to parent component */
             this.onSaveSuccessfull.emit(true);
           },
           (error) => {
-            this.showMSG(
-              toast.error,
-              'Error',
-              error
-            );
+            this.showMSG(toast.error, 'Error', error);
           }
         );
     } else {
