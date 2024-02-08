@@ -19,6 +19,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class UploadProductsComponent {
   @Output() onCancelEvent: EventEmitter<true> = new EventEmitter<true>();
   @Output() onFileUploadedEvent: EventEmitter<File> = new EventEmitter<File>();
+  @Output() onSaveSuccessfull: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(
     private messageService: MessageService,
@@ -68,6 +69,7 @@ export class UploadProductsComponent {
               'Ok',
               'Product uploaded successfully'
             );
+            this.onSaveSuccessfull.emit(true);
           },
           (error) => {
             this.showMSG(

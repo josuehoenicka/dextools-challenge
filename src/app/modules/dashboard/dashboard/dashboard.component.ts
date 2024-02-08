@@ -88,6 +88,11 @@ export class DashboardComponent {
     console.log('File:', file);
   }
 
+  onSaveSuccessfull(e: any){
+    console.error(e);
+    this.onInitViewTab();
+  }
+
   showMSG(
     severityShow: 'success' | 'info' | 'warn' | 'error' | 'custom',
     title: string,
