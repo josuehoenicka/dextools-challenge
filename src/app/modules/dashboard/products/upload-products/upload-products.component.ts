@@ -58,15 +58,23 @@ export class UploadProductsComponent {
   onSave() {
     this.productForm.controls["pictures"].patchValue(this.arr_filesUploaded);
     console.error(this.productForm)
-    if (this.productForm.valid) {
-      this.productsService
-        .addData(this.tokenFromLogin, this.productForm.value)
-        .subscribe(
-          (res) => {
-            console.error(res);
+    if (this.productForm.valid && this.fileUploaded) {
+        this.productsService
+          .addData(this.tokenFromLogin, this.productForm.value)
+          .subscribe(
+            (res) => {
+            this.showMSG(
+              toast.success,
+              'Ok',
+              'Product uploaded successfully'
+            );
           },
           (error) => {
-            console.error(error);
+            this.showMSG(
+              toast.error,
+              'Error',
+              error
+            );
           }
         );
     } else {

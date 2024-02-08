@@ -75,7 +75,6 @@ export class DashboardComponent {
   getProducts(token: string) {
     this.productsService.getData(token).subscribe((res) => {
       this.productsService.setProducts(res);
-      this.products = [];
     });
   }
 

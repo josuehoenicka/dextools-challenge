@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { iProductos } from 'src/app/common/interfaces/products';
+import { LocalstorageService } from 'src/app/services/localstorage.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class WatchProductsComponent {
   paginatorMore1000: boolean = false;
   totalRecordsProd: any;
   loading!: boolean;
+  tokenFromLogin: any;
 
   columnsNamesProd: any[] = [
     { columna: 'Code' },
@@ -24,7 +26,7 @@ export class WatchProductsComponent {
     { columna: 'SKU' },
   ];
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private localStorage: LocalstorageService) {}
 
   async ngOnInit(): Promise<void> {
     this.loading = true;
@@ -33,6 +35,10 @@ export class WatchProductsComponent {
 
   onLoadProducts() {
     // console.error(res);
+    this.tokenFromLogin = this.localStorage.getLoginResponseFromLocalStorage();
+    this.productsService.getData(this.tokenFromLogin).subscribe((res) => {
+      this.productsService.setProducts(res);
+    });
     this.productsService.getProducts().subscribe((res) => {
       this.products = res;
       console.error(res)
